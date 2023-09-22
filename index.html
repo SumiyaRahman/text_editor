@@ -4,55 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Text Editor</title>
+    <style>
+        @media screen and (max-width:767px) {
+            .text-alignment{
+                margin: 10px 0;
+            }
+        }
+        @media screen and (max-width:767px)  and (min-width:320px) {
+            .whole-div{
+                width: 70%;
+                margin: 0 15px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        h1{
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
 </head>
 <body>
-    <section class="h-screen bg-slate-950 flex items-center justify-center">
-        <div class="lg:w-6/12 md:5/12 bg-white rounded py-5 px-10">
-            <div>
-                <div class="flex justify-center">
-                    <div class="grid grid-cols-3">
-                        <div class="flex justify-center">
-                            <i id="bold" class="fa-solid fa-bold bg-slate-900 text-white p-2 rounded text-sm"></i>
-                            <i id="italic" class="fa-solid fa-italic bg-slate-900 text-white p-2 rounded text-sm mx-5"></i>
-                            <i id="underline" class="fa-solid fa-underline bg-slate-900 text-white p-2 rounded text-sm"></i>
-                        </div>
-                        <div class="mx-10 flex justify-center">
-                            <i id="left" class="fa-solid fa-align-left bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
-                            <i id="center" class="fa-solid fa-align-center bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
-                            <i id="right" class="fa-solid fa-align-right bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
-                            <i id="justify" class="fa-solid fa-align-justify bg-slate-900 text-white p-2 rounded text-sm"></i>
-                        </div>
-                        
-                        <div class="flex justify-center">
-                            <select name="font" id="" class="w-14  mr-5 bg-slate-900 text-white rounded">
-                                <option value="10px">10px</option>
-                                <option value="11px">11px</option>
-                                <option value="12px">12px</option>
-                                <option value="14px">14px</option>
-                                <option value="15px">15px</option>
-                                <option value="16px">16px</option>
-                                <option value="18px">18px</option>
-                                <option value="20px">20px</option>
-                                <option value="22px">22px</option>
-                                <option value="24px">24px</option>
-                                <option value="26px">26px</option>
-                                <option value="28px">28px</option>
-                                <option value="36px">36px</option>
-                                <option value="48px">48px</option>
-                                <option value="72px">72px</option>
-                            </select>
+    <main class="bg-slate-950">
+        <section class="h-screen  flex items-center justify-center">
+            <div class="lg:w-6/12  bg-white rounded py-5 lg:px-10 md:px-10 whole-div">
+                <div>
+                    <div class="flex justify-center">
+                        <div class="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1">
+                            <div class="flex lg:justify-center md:justify-center">
+                                <i id="bold" class="fa-solid fa-bold bg-slate-900 text-white p-2 rounded text-sm"></i>
+                                <i id="italic" class="fa-solid fa-italic bg-slate-900 text-white p-2 rounded text-sm mx-5"></i>
+                                <i id="underline" class="fa-solid fa-underline bg-slate-900 text-white p-2 rounded text-sm"></i>
+                            </div>
+                            <div class="lg:mx-10 flex  lg:justify-center md:justify-center text-alignment">
+                                <i id="left" class="fa-solid fa-align-left bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                                <i id="center" class="fa-solid fa-align-center bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                                <i id="right" class="fa-solid fa-align-right bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                                <i id="justify" class="fa-solid fa-align-justify bg-slate-900 text-white p-2 rounded text-sm"></i>
+                            </div>
                             
-                            <input type="color" class="">
+                            <div class="flex lg:justify-center md:justify-center">
+                                <select name="font" id="font-size" class="w-14  mr-5 bg-slate-900 text-white rounded">
+                                    <option value="10px">10px</option>
+                                    <option value="11px">11px</option>
+                                    <option value="12px">12px</option>
+                                    <option value="14px">14px</option>
+                                    <option value="15px">15px</option>
+                                    <option value="16px">16px</option>
+                                    <option value="18px">18px</option>
+                                    <option value="20px">20px</option>
+                                    <option value="22px">22px</option>
+                                    <option value="24px">24px</option>
+                                    <option value="26px">26px</option>
+                                    <option value="28px">28px</option>
+                                    <option value="36px">36px</option>
+                                    <option value="48px">48px</option>
+                                    <option value="72px">72px</option>
+                                </select>
+                                
+                                <input id="color-board" type="color" class="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <textarea name="text-field" id="text-field" cols="30" rows="10" placeholder="Write Your Text Here..." class="bg-slate-900 w-full outline-none rounded mt-5 pt-3 pl-4 text-white"></textarea>
+                    <div>
+                        <textarea name="text-field" id="text-field" cols="30" rows="10" placeholder="Write Your Text Here..." class="bg-gray-200 w-full outline-none rounded mt-5 pt-3 px-4 text-lg placeholder:text-sm"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- fontawesome kit -->
     <script src="https://kit.fontawesome.com/2e243b1e3c.js" crossorigin="anonymous"></script>
