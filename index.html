@@ -7,7 +7,52 @@
     <title>Text Editor</title>
 </head>
 <body>
-    
+    <section class="h-screen bg-slate-950 flex items-center justify-center">
+        <div class="lg:w-6/12 md:5/12 bg-white rounded py-5 px-10">
+            <div>
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-3">
+                        <div class="flex justify-center">
+                            <i id="bold" class="fa-solid fa-bold bg-slate-900 text-white p-2 rounded text-sm"></i>
+                            <i id="italic" class="fa-solid fa-italic bg-slate-900 text-white p-2 rounded text-sm mx-5"></i>
+                            <i id="underline" class="fa-solid fa-underline bg-slate-900 text-white p-2 rounded text-sm"></i>
+                        </div>
+                        <div class="mx-10 flex justify-center">
+                            <i id="left" class="fa-solid fa-align-left bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                            <i id="center" class="fa-solid fa-align-center bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                            <i id="right" class="fa-solid fa-align-right bg-slate-900 text-white p-2 rounded text-sm mr-5"></i>
+                            <i id="justify" class="fa-solid fa-align-justify bg-slate-900 text-white p-2 rounded text-sm"></i>
+                        </div>
+                        
+                        <div class="flex justify-center">
+                            <select name="font" id="" class="w-14  mr-5 bg-slate-900 text-white rounded">
+                                <option value="10px">10px</option>
+                                <option value="11px">11px</option>
+                                <option value="12px">12px</option>
+                                <option value="14px">14px</option>
+                                <option value="15px">15px</option>
+                                <option value="16px">16px</option>
+                                <option value="18px">18px</option>
+                                <option value="20px">20px</option>
+                                <option value="22px">22px</option>
+                                <option value="24px">24px</option>
+                                <option value="26px">26px</option>
+                                <option value="28px">28px</option>
+                                <option value="36px">36px</option>
+                                <option value="48px">48px</option>
+                                <option value="72px">72px</option>
+                            </select>
+                            
+                            <input type="color" class="">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <textarea name="text-field" id="text-field" cols="30" rows="10" placeholder="Write Your Text Here..." class="bg-slate-900 w-full outline-none rounded mt-5 pt-3 pl-4 text-white"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- fontawesome kit -->
     <script src="https://kit.fontawesome.com/2e243b1e3c.js" crossorigin="anonymous"></script>
